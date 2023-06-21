@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<plugin id="no.felleskatalogen.fhir.epi.dita">
+    <transtype name="fhir-epi" desc="FHIR ePI Composition"/>
+    <feature extension="dita.transtype.print" value="fhir-epi"/>
+    <feature extension="ant.import" file="build.xml"/>
+</plugin>

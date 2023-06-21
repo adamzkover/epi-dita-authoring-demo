@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <topicgroup>
+        <data name="resourceType" value="Bundle"/>
+        <data name="identifier">
+            <data name="system" value="https://www.gravitatehealth.eu/sid/doc"/>
+            <data name="value" value="EU/1/01/001/001"/>
+        </data>
+        <data name="timestamp" value="2021-01-01T01:01:01+00:00"/>
+        <mapref href="package-leaflet-composition.ditamap"/>
+        <topicgroup>
+            <data name="resourceType" value="Organization"/>
+            <data name="id" value="9249f2cd-395a-45e1-ba46-0714efd56e2a"/>
+            <data name="identifier">
+                <data name="system" value="https://www.gravitatehealth.eu/uuid"/>
+                <data name="value" value="0b6f2078-a3ad-444d-a11c-6f300a04905c"/>
+            </data>
+            <data name="name" value="Acme Corporation"/>
+        </topicgroup>
+    </topicgroup>
+</map>

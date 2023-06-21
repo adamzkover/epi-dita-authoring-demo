@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="template_6-5_revised-date">
+    <title>This leaflet was last revised in &lt;{MM/YYYY}&gt;&lt;{month YYYY}&gt;.</title>
+</topic>

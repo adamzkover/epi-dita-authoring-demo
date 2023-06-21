@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <topicgroup>
+        <data name="resourceType" value="Composition"/>
+        <data name="authorId" value="9249f2cd-395a-45e1-ba46-0714efd56e2a"/>
+        <data name="date" value="2021-01-01T01:01:01+00:00"/>
+        <data name="id" value="2236c101-ed1a-4b60-8c47-1b6a9018a8a3"/>
+        <data name="identifier">
+            <data name="system" value="https://www.gravitatehealth.eu/uuid"/>
+            <data name="value" value="0aebc6f5-0c7a-4f63-8678-ba1f8093886b"/>
+        </data>
+        <data name="language" value="en"/>
+        <data name="subjectIdentifier">
+            <data name="system" value="https://www.gravitatehealth.eu/uuid"/>
+            <data name="value" value="e5b5d094-223d-4f08-bb43-5ef8031a2164"/>
+        </data>
+        <data name="title" value="ePI Bundle template"/>
+        <topicref href="0_package-leaflet.dita">
+            <data name="sectionId">
+                <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                <data name="code" value="200000029894"/>
+            </data>
+            <topicref href="1_what-is-and-used-for/1-0_what-is-and-used-for.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029895"/>
+                </data>
+            </topicref>
+            <topicref href="2_need-to-know/2-0_need-to-know.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029896"/>
+                </data>
+                <topicref href="2_need-to-know/2-1_do-not-take.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029897"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-2_warnings-precautions.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029898"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-3_children-adolescent.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029899"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-4_other-medicines.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029900"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-5_food-drink.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029901"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-6_pregnancy-breast-feeding-fertility.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029902"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-7_driving-using-machines.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029903"/>
+                    </data>
+                </topicref>
+                <topicref href="2_need-to-know/2-8_contains-excipients.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029904"/>
+                    </data>
+                </topicref>
+            </topicref>
+            <topicref href="3_how-to-take/3-0_how-to-take.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029905"/>
+                </data>
+                <topicref href="3_how-to-take/3-1_use-in-children-adolescent.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029906"/>
+                    </data>
+                </topicref>
+                <topicref href="3_how-to-take/3-2_take-more-than-should.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029907"/>
+                    </data>
+                </topicref>
+                <topicref href="3_how-to-take/3-3_forget-to-take.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029908"/>
+                    </data>
+                </topicref>
+                <topicref href="3_how-to-take/3-4_stop-taking.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029909"/>
+                    </data>
+                </topicref>
+            </topicref>
+            <topicref href="4_side-effects/4-0_side-effects.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029910"/>
+                </data>
+                <topicref href="4_side-effects/4-1_side-effects-children-adolescent.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029911"/>
+                    </data>
+                </topicref>
+                <topicref href="4_side-effects/4-2_reporting-side-effects.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029912"/>
+                    </data>
+                </topicref>
+            </topicref>
+            <topicref href="5_store/5-0_store.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029913"/>
+                </data>
+            </topicref>
+            <topicref href="6_contents-other-info/6-0_contents-other-info.dita">
+                <data name="sectionId">
+                    <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                    <data name="code" value="200000029914"/>
+                </data>
+                <topicref href="6_contents-other-info/6-1_contents.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029915"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-2_looks-like-contents-pack.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029916"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-3_mah-manufacturer.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029917"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-4_authorized-names.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029918"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-5_revised-date.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029919"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-6_other-sources.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029920"/>
+                    </data>
+                </topicref>
+                <topicref href="6_contents-other-info/6-7_for-healthcare-professionals-only.dita">
+                    <data name="sectionId">
+                        <data name="system" value="https://spor.ema.europa.eu/rms"/>
+                        <data name="code" value="200000029921"/>
+                    </data>
+                </topicref>
+            </topicref>
+        </topicref>
+    </topicgroup>
+</map>
