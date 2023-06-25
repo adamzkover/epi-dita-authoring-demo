@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="3.0">
+<xsl:stylesheet xmlns="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fk="http://felleskatalogen.no"
+    exclude-result-prefixes="#all" version="3.0">
 
     <xsl:output indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -147,10 +149,32 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="p | ol | ul | li">
+    <xsl:template match="div | p | ol | ul | li | dl | dt | dd">
         <xsl:element name="{local-name()}" namespace="http://www.w3.org/1999/xhtml">
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+
+    <xsl:template match="image">
+        <img xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="alt"/>
+            <xsl:variable name="href">
+                <xsl:value-of select="@href"/>
+            </xsl:variable>
+            <xsl:variable name="documentUri">
+                <xsl:value-of select="document-uri(/)"/>
+            </xsl:variable>
+            <xsl:attribute name="src">
+                <xsl:value-of select="fk:readBinaryData($documentUri, $href)"/>
+            </xsl:attribute>
+            <xsl:attribute name="data-format" select="@format"/>
+        </img>
+    </xsl:template>
+
+    <xsl:template match="image/alt">
+        <xsl:attribute name="alt">
+            <xsl:apply-templates/>
+        </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="*"/>

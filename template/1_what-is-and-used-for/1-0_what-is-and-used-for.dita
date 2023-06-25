@@ -4,5 +4,8 @@
     <title>1. What X is and what it is used for</title>
     <body>
         <p>In hac habitasse platea dictumst. Maecenas aliquam enim ac enim egestas, at volutpat urna lobortis. Nunc suscipit lorem non gravida viverra. Nam ut sagittis lectus, non lobortis odio. Donec non finibus risus. Vivamus auctor commodo tortor, vel volutpat nulla suscipit eget. Sed quis dolor dignissim, semper sapien semper, tincidunt purus. Vestibulum pharetra lacus vel odio tristique, at placerat dui tempus.</p>
+        <image href="../images/pharmaceuticals.jpg" format="jpg">
+            <alt>Pharmaceuticals</alt>
+        </image>
     </body>
 </topic>

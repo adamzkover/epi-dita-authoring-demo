@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 
-    <target name="dita2fhir-epi" depends="build-init,preprocess">
-        <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi.xsl"
-            useImplicitFileset="false"
-            destdir="${output.dir}" extension=".xml">
-            <fileset dir="${dita.temp.dir}" includes="${user.input.file}"/>
-        </xslt>
+    <property name="build-step.copy-image" value="false"/>
+
+    <target name="dita2fhir-epi" depends="build-init,preprocess2">
+        <dirname property="no.felleskatalogen.input.dir" file="${args.input}"/>
+        <copy todir="${dita.temp.dir}">
+            <fileset dir="${no.felleskatalogen.input.dir}">
+                <include name="images/**"/>
+            </fileset>
+        </copy>
+        <basename property="no.felleskatalogen.user.input.basename" file="${user.input.file}" suffix=".ditamap"/>
+        <pipeline>
+            <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi.xsl"
+                in="${dita.temp.dir}/${user.input.file}"
+                out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.tmp"
+                extension=".xml"/>
+            <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-binary.xsl"
+                in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.tmp"
+                out="${output.dir}/${no.felleskatalogen.user.input.basename}.xml"
+                extension=".xml"/>
+        </pipeline>
     </target>
 
 </project>
