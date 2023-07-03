@@ -14,10 +14,14 @@
         <pipeline>
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi.xsl"
                 in="${dita.temp.dir}/${user.input.file}"
-                out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.tmp"
+                out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
+                extension=".xml"/>
+            <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-img-uuid.xsl"
+                in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
+                out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.uuid"
                 extension=".xml"/>
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-binary.xsl"
-                in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.tmp"
+                in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.uuid"
                 out="${output.dir}/${no.felleskatalogen.user.input.basename}.xml"
                 extension=".xml"/>
         </pipeline>

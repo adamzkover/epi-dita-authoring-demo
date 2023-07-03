@@ -4,5 +4,5 @@
     <transtype name="fhir-epi" desc="FHIR ePI Composition"/>
     <feature extension="dita.transtype.print" value="fhir-epi"/>
     <feature extension="ant.import" file="build.xml"/>
-    <feature extension="dita.conductor.lib.import" file="lib/xslt-binary-read-0.0.1-SNAPSHOT.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/xslt-functions-0.0.1-SNAPSHOT.jar"/>
 </plugin>

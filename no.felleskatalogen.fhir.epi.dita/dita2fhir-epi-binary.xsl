@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:f="http://hl7.org/fhir" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="3.0">
+<xsl:stylesheet xmlns:f="http://hl7.org/fhir" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fk="http://felleskatalogen.no"
+    exclude-result-prefixes="#all" version="3.0">
 
     <xsl:output indent="yes"/>
 
+    <xsl:key name="imgUuidByGenerateId" match="//h:img"  use="fk:randomUUID()"/>
+
     <xsl:template match="h:img">
-        <xsl:variable name="id" select="generate-id()"/>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
             <xsl:attribute name="src">
-                <xsl:value-of select="'#' || $id"/>
+                <xsl:value-of select="'#' || @data-uuid"/>
             </xsl:attribute>
         </xsl:copy>
     </xsl:template>
 
     <xsl:template match="h:img/@data-format"/>
-
+    <xsl:template match="h:img/@data-uuid"/>
+    
     <xsl:template match="f:Bundle">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
             <xsl:for-each select="//h:img">
-                <xsl:variable name="id" select="generate-id()"/>
                 <entry xmlns="http://hl7.org/fhir">
-                    <fullUrl value="{'urn:uuid:' || $id}"/>
+                    <fullUrl value="{'urn:uuid:' || @data-uuid}"/>
                     <resource>
                         <Binary>
-                            <id value="{$id}"/>
+                            <id value="{@data-uuid}"/>
                             <contentType>
                                 <xsl:attribute name="value">
                                     <xsl:call-template name="contentType">

@@ -1,4 +1,4 @@
-package no.felleskatalogen.dita;
+package no.felleskatalogen.xslt;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,9 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import net.sf.saxon.expr.XPathContext;
 import net.sf.saxon.lib.ExtensionFunctionCall;
 import net.sf.saxon.lib.ExtensionFunctionDefinition;
@@ -23,8 +20,6 @@ import net.sf.saxon.value.SequenceType;
 import net.sf.saxon.value.StringValue;
 
 public class ReadBinaryData extends ExtensionFunctionDefinition {
-
-    private static final Logger logger = LoggerFactory.getLogger(ReadBinaryData.class);
 
     @Override
     public SequenceType[] getArgumentTypes() {
@@ -51,10 +46,6 @@ public class ReadBinaryData extends ExtensionFunctionDefinition {
                 // Input parameters: the current document URI and the binary relative path
                 String documentUri = arguments[0].head().getStringValue();
                 String href = arguments[1].head().getStringValue();
-
-                if (logger.isDebugEnabled()) {
-                    logger.debug("Processing image reference {} in document {}", href, documentUri);
-                }
 
                 // Get the directory of the current document
                 Path documentPath = null;

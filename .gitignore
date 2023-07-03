@@ -1,5 +1,5 @@
 no.felleskatalogen.fhir.epi.dita/lib/*.jar
 
-xslt-binary-read/target
+xslt-functions/target
 
 out
