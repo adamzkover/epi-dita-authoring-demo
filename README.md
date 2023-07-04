@@ -2,7 +2,7 @@
 
 Demo of FHIR ePI authoring using DITA XML source files.
 
-1. Install [DITA Open Toolkit](https://www.dita-ot.org/)
+1. Install [DITA Open Toolkit 4.1](https://www.dita-ot.org/)
 1. `mvn package` the project in `xslt-functions`
 1. Copy the JAR file from the target directory to `no.felleskatalogen.fhir.epi.dita/lib`
 1. Copy the `no.felleskatalogen.fhir.epi.dita` directory to the DITA-OT plug-in directory
