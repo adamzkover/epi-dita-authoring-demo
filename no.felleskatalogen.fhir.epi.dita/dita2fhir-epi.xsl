@@ -6,6 +6,9 @@
     <xsl:output indent="yes"/>
     <xsl:strip-space elements="*"/>
 
+    <xsl:param name="no.felleskatalogen.input.dir"/>
+    <xsl:param name="no.felleskatalogen.temp.dir"/>
+
     <xsl:template match="map">
         <xsl:apply-templates/>
     </xsl:template>
@@ -165,7 +168,11 @@
                 <xsl:value-of select="document-uri(/)"/>
             </xsl:variable>
             <xsl:attribute name="src">
-                <xsl:value-of select="fk:readBinaryData($documentUri, $href)"/>
+                <xsl:value-of select="fk:readBinaryData(
+                    $no.felleskatalogen.input.dir,
+                    $no.felleskatalogen.temp.dir,
+                    $documentUri,
+                    $href)"/>
             </xsl:attribute>
             <xsl:attribute name="data-format" select="@format"/>
         </img>

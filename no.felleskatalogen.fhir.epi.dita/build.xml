@@ -5,17 +5,15 @@
 
     <target name="dita2fhir-epi" depends="build-init,preprocess2">
         <dirname property="no.felleskatalogen.input.dir" file="${args.input}"/>
-        <copy todir="${dita.temp.dir}">
-            <fileset dir="${no.felleskatalogen.input.dir}">
-                <include name="images/**"/>
-            </fileset>
-        </copy>
         <basename property="no.felleskatalogen.user.input.basename" file="${user.input.file}" suffix=".ditamap"/>
         <pipeline>
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi.xsl"
                 in="${dita.temp.dir}/${user.input.file}"
                 out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
-                extension=".xml"/>
+                extension=".xml">
+                <param name="no.felleskatalogen.input.dir" expression="${no.felleskatalogen.input.dir}"/>
+                <param name="no.felleskatalogen.temp.dir" expression="${dita.temp.dir}"/>
+            </xslt>
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-img-uuid.xsl"
                 in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
                 out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.uuid"

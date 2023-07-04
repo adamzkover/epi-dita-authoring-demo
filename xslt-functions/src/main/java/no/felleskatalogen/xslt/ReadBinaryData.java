@@ -23,7 +23,8 @@ public class ReadBinaryData extends ExtensionFunctionDefinition {
 
     @Override
     public SequenceType[] getArgumentTypes() {
-        return new SequenceType[] { SequenceType.SINGLE_STRING, SequenceType.SINGLE_STRING };
+        return new SequenceType[] { SequenceType.SINGLE_STRING, SequenceType.SINGLE_STRING,
+            SequenceType.SINGLE_STRING, SequenceType.SINGLE_STRING };
     }
 
     @Override
@@ -43,9 +44,11 @@ public class ReadBinaryData extends ExtensionFunctionDefinition {
             @Override
             public Sequence call(XPathContext context, Sequence[] arguments) throws XPathException {
 
-                // Input parameters: the current document URI and the binary relative path
-                String documentUri = arguments[0].head().getStringValue();
-                String href = arguments[1].head().getStringValue();
+                // Input parameters
+                String inputDir = arguments[0].head().getStringValue();
+                String tempDir = arguments[1].head().getStringValue();
+                String documentUri = arguments[2].head().getStringValue();
+                String href = arguments[3].head().getStringValue();
 
                 // Get the directory of the current document
                 Path documentPath = null;
@@ -54,14 +57,12 @@ public class ReadBinaryData extends ExtensionFunctionDefinition {
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }
+
+                Path tempDirPath = Paths.get(tempDir);
                 Path documentDirPath = documentPath.getParent();
+                Path documentDirRelativePath = tempDirPath.relativize(documentDirPath);
 
-                // Get the binary relative path
-                File hrefFile = new File(href);
-                Path hrefPath = hrefFile.toPath();
-
-                // Resolve the binary path relative to the document directory
-                Path imagePath = documentDirPath.resolve(hrefPath);
+                Path imagePath = Paths.get(inputDir, documentDirRelativePath.toString(), href);
 
                 // Read binary data and return as Base64 encoded string
                 try {
