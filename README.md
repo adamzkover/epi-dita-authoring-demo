@@ -18,5 +18,6 @@ Topic `.dita` files can be reused in several maps, for example to share static c
 Links
 
 * [DITA-OT Implementing Saxon extension functions](https://www.dita-ot.org/4.1/topics/implement-saxon-extension-functions.html)
+* [DITA-OT Adding Saxon customizations](https://www.dita-ot.org/4.1/topics/implement-saxon-customizations.html)
 * [DITA-OT Adding a Java library to the classpath](https://www.dita-ot.org/4.1/topics/plugin-javalib.html)
 * [DITA-OT Parameters](https://www.dita-ot.org/4.1/parameters/parameters_intro.html)

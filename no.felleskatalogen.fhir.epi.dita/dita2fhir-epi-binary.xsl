@@ -43,6 +43,19 @@
         </xsl:copy>
     </xsl:template>
 
+    <xsl:template match="f:section">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="f:title | f:code | f:author | f:focus | f:text | f:orderedBy"/>
+            <xsl:for-each select="f:text//h:img">
+                <entry xmlns="http://hl7.org/fhir">
+                    <reference value="{'Binary/' || @data-uuid}"/>
+                </entry>
+            </xsl:for-each>
+            <xsl:apply-templates select="f:emptyReason | f:section"/>
+        </xsl:copy>
+    </xsl:template>
+
     <xsl:template name="contentType">
         <xsl:param name="format"/>
         <xsl:choose>
