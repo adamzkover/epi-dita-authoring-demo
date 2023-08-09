@@ -1,5 +1,3 @@
 no.felleskatalogen.fhir.epi.dita/lib/*.jar
 
 xslt-functions/target
-
-out
