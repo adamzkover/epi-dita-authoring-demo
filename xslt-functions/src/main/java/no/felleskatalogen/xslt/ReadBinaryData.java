@@ -1,6 +1,5 @@
 package no.felleskatalogen.xslt;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.net.URI;

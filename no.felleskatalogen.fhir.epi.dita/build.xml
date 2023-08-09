@@ -7,6 +7,8 @@
         <dirname property="no.felleskatalogen.input.dir" file="${args.input}"/>
         <basename property="no.felleskatalogen.user.input.basename" file="${user.input.file}" suffix=".ditamap"/>
         <pipeline>
+            <!-- Converts the DITA Maps and Topics to a FHIR Bundle -->
+            <!-- Uses fk:readBinaryData to read image binary data to the src attribute -->
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi.xsl"
                 in="${dita.temp.dir}/${user.input.file}"
                 out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
@@ -14,10 +16,12 @@
                 <param name="no.felleskatalogen.input.dir" expression="${no.felleskatalogen.input.dir}"/>
                 <param name="no.felleskatalogen.temp.dir" expression="${dita.temp.dir}"/>
             </xslt>
+            <!-- Uses fk:randomUUID to generate a random UUID and adds it to the image's data-uuid attribute -->
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-img-uuid.xsl"
                 in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.merged"
                 out="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.uuid"
                 extension=".xml"/>
+            <!-- Sets FHIR image references in the Composition (#id) and adds Binary resources for the images -->
             <xslt style="${dita.plugin.no.felleskatalogen.fhir.epi.dita.dir}/dita2fhir-epi-binary.xsl"
                 in="${dita.temp.dir}/${no.felleskatalogen.user.input.basename}.uuid"
                 out="${output.dir}/${no.felleskatalogen.user.input.basename}.xml"

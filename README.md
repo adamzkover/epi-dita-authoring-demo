@@ -15,6 +15,8 @@ The DITA maps and topic files in the `template` directory represent content that
 
 Topic `.dita` files can be reused in several maps, for example to share static content between package leaflets. The maps can be extended with more topics. Topics with `data[@name = 'sectionId']` are converted to Composition.section. Other topics are added as HTML div elements to the parent section text.
 
+The XSLTs need functionality that is not available in Saxon HE, these are impleented in extension functions in `xslt-functions`.
+
 Links
 
 * [DITA-OT Implementing Saxon extension functions](https://www.dita-ot.org/4.1/topics/implement-saxon-extension-functions.html)
