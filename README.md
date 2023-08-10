@@ -1,15 +1,17 @@
 # epi-dita-authoring-demo
 
-Demo of FHIR ePI authoring using DITA XML source files.
+Demo of FHIR ePI authoring using DITA XML source files. The built-in PDF and HTML DITA plug-ins can be used to generate PDF and HTML output from the same source files.
 
+1. Install Java 11 or later and [Maven](https://maven.apache.org/).
 1. Install [DITA Open Toolkit 4.1](https://www.dita-ot.org/)
 1. `mvn package` the project in `xslt-functions`
 1. Copy the JAR file from the target directory to `no.felleskatalogen.fhir.epi.dita/lib`
 1. Copy the `no.felleskatalogen.fhir.epi.dita` directory to the DITA-OT plug-in directory
-1. Install the plugin with `dita install`
-1. Convert the DITA maps to FHIR ePIs, e.g. `dita -i template/package-leaflet-bundle.ditamap -f fhir-epi`
+1. Install the plug-in with `dita install`
+1. Convert the DITA maps to FHIR ePI with `dita -i template/package-leaflet-bundle.ditamap -f fhir-epi`
+1. Check the FHIR ePI result in the `out` directory.
+1. Validate the FHIR ePI with [the official FHIR validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar), e.g. `java -jar /path/to/validator_cli.jar out/package-leaflet-bundle.xml`
 
-The FHIR ePI result is saved to the `out` directory.
 
 The DITA maps and topic files in the `template` directory represent content that might come from a DITA-based CMS.
 
